@@ -28,6 +28,9 @@ If the customized `.condarc` is kept in place, Conda package installation should
 
 ## Codex on login02
 
+> [!WARNING]
+> **High risk:** If Codex uses an ICFS-backed home directory, updating its database can crash the node on which it is running and disrupt every user of that node. Never override `CODEX_HOME` or use `~/.codex` for Codex.
+
 Use Codex only on `login02`. Do not install or run Codex on `login01` or on compute nodes.
 
 ICFS has a file-locking issue: if Codex runs on a node and uses an ICFS-backed Codex home, updating its database can crash that node. To avoid this, `login02` automatically creates a local per-user Codex directory at `/var/lib/codex/$USER` and sets `CODEX_HOME` to that path when you log in.

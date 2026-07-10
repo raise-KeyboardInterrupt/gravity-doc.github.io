@@ -7,6 +7,9 @@
 
 ## Can I use Codex on the server?
 
+> [!WARNING]
+> **High risk:** An ICFS-backed Codex home can crash the node running Codex and disrupt all users on that node. Use Codex only on `login02`, where `CODEX_HOME` is configured safely. See the [Codex known issue](/MISC/Issues?id=codex-on-login02).
+
 Yes, but only on `login02`. Do not install or run Codex on `login01` or on compute nodes. See the [Codex known issue](/MISC/Issues?id=codex-on-login02) for the reason and current restrictions.
 
 On `login02`, `CODEX_HOME` is automatically configured as `/var/lib/codex/$USER`. Do not override it or move the Codex home directory under your home directory; see the [Codex known issue](/MISC/Issues?id=codex-on-login02) for details.
