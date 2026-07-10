@@ -5,6 +5,20 @@
 > If there is **NO** solution of your problem, feel free to [contact us](/?id=contact)!
 > 
 
+## Can I use Codex on the server?
+
+Yes, but only on `login02`. Do not install or run Codex on `login01` or on compute nodes. See the [Codex known issue](/MISC/Issues?id=codex-on-login02) for the reason and current restrictions.
+
+On `login02`, `CODEX_HOME` is automatically configured as `/var/lib/codex/$USER`. Do not override it or move the Codex home directory under your home directory; see the [Codex known issue](/MISC/Issues?id=codex-on-login02) for details.
+
+Install Codex with:
+
+```bash
+curl -fsSL https://chatgpt.com/install-codex.sh | bash
+```
+
+After installation, modify `$CODEX_HOME/config.toml` as needed. Do not change the `CODEX_HOME` setting itself.
+
 ## Permission denied
 
 I got a **permission denied** error when trying to login with ssh
